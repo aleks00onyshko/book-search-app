@@ -1,0 +1,21 @@
+.favorite-book-list-header {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+    margin-bottom: 1.6rem;
+}
+
+.favorite-book-list-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-main);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+.fav-count {
+    font-size: 1.6rem;
+    color: var(--text-muted);
+    font-weight: normal;
+}

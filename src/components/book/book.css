@@ -1,0 +1,130 @@
+.book-card {
+    background: var(--bg-surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: transform var(--trans-fast), box-shadow var(--trans-fast);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-card:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: var(--shadow-hover);
+}
+
+.book-card-header {
+    position: relative;
+    height: 28rem;
+    background: var(--bg-surface);
+
+    /* Shimmer Effect */
+    background-image: linear-gradient(
+            90deg,
+            var(--bg-shimmer-1) 0px,
+            var(--bg-shimmer-2) 50%,
+            var(--bg-shimmer-1) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+}
+
+.book-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity var(--trans-slow);
+}
+
+.book-cover.loaded {
+    opacity: 1;
+}
+
+.book-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    background-color: var(--bg-surface);
+    border-bottom: 0.1rem solid var(--border-color);
+}
+
+.btn-favorite {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    background: var(--bg-surface);
+    border: none;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: var(--radius-circle);
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 2.2rem;
+    color: var(--icon-inactive);
+    box-shadow: var(--shadow-btn);
+    transition: all 0.2s var(--bounce);
+    z-index: 2;
+}
+
+.btn-favorite:hover {
+    transform: scale(1.15);
+}
+
+.btn-favorite.active {
+    color: var(--color-warn);
+}
+
+.book-card-body {
+    padding: 1.6rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: var(--text-main);
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.3;
+}
+
+.book-author {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book-year {
+    align-self: flex-start;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    background: var(--bg-surface);
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-pill);
+    font-weight: 500;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}

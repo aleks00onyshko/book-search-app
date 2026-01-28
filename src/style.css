@@ -1,0 +1,116 @@
+:root {
+  /* --- Palette --- */
+  --color-primary: #10b981;       /* Emerald Green */
+  --color-primary-dark: #059669;
+  --color-warn: #ef4444;          /* Red */
+
+  /* --- Backgrounds --- */
+  --bg-body: #f3f4f6;             /* Light Gray Background */
+  --bg-surface: #ffffff;          /* White Cards */
+  --bg-shimmer-1: #f3f4f6;        /* Skeleton light */
+  --bg-shimmer-2: #e5e5e5;        /* Skeleton dark */
+
+  /* --- Text --- */
+  --text-main: #1f2937;           /* Dark Gray */
+  --text-muted: #6b7280;          /* Medium Gray */
+  --icon-inactive: #d1d1d1;       /* Gray Heart */
+
+  /* --- Borders & UI Lines --- */
+  --border-color: #e5e7eb;
+  --border-focus: rgba(16, 185, 129, 0.15); /* Primary color low opacity */
+
+  /* --- Spacing --- */
+  --radius: 0.8rem;
+  --radius-pill: 1.2rem;
+  --radius-circle: 50%;
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-hover: 0 0.8rem 1.6rem rgba(0,0,0,0.1);
+  --shadow-btn: 0 0.2rem 0.6rem rgba(0,0,0,0.15);
+
+  /* --- Transitions --- */
+  --trans-fast: 0.2s ease;
+  --trans-med: 0.3s ease;
+  --trans-slow: 0.4s ease-out;
+  --bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* --- Typography --- */
+  --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--font-family), serif;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 30rem;
+  gap: 3rem;
+  align-items: start;
+}
+
+.controls-row {
+  padding-bottom: 1rem;
+}
+
+.results-area {
+  min-width: 0;
+}
+
+.favorites-area {
+  position: sticky;
+  top: 2rem;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .favorite-book-list {
+    max-width: 100%;
+  }
+}
+
+[data-theme="dark"] {
+  --bg-body: #111827;
+  --bg-surface: #1f2937;
+  --bg-shimmer-1: #1f2937;
+  --bg-shimmer-2: #374151;
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --icon-inactive: #4b5563;
+  --border-color: #374151;
+  --border-focus: rgba(16, 185, 129, 0.5);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.5);
+}
