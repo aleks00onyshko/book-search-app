@@ -1,7 +1,6 @@
 import './style.css';
 import { Header } from './components/header/Header.js';
 import { Search } from './components/search/Search.js';
-import { searchBooks } from './utils/api.js';
 import { actions, selectors } from './store.js';
 import { effect } from './utils/signal.js';
 import {BookList} from "./components/book-list/book-list.js";
