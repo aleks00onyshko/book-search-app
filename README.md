@@ -27,7 +27,7 @@ I introduced Angular-like signal/effects system
 
 ## 🏗️ Architecture & State Management
 
-The application follows a unidirectional data flow pattern, similar to Ngrx signal store, but simplified for Vanilla JS.
+The application follows a unidirectional data flow pattern, similar to Ngrx signal store, but simplified a little.
 
 ### The Store (`src/store.js`)
 All application state lives in a single source of truth.
@@ -39,8 +39,8 @@ All application state lives in a single source of truth.
 > **Note**
 > Important to notice, that I didn't implement `computed()` functionality, just didn't want to overcomplicate things
 
-### Component Pattern
-Components are "dumb" views. They do not hold business logic.
+### Components
+Introduced components which are just simple functions that render html. Just found it simpler then writing procedural code
 1.  **Read State:** They subscribe to `selectors` inside an `effect()`.
 2.  **Render:** They rebuild only their specific DOM subtree when that `effect()` triggers.
 3.  **Interact:** They delegate events to **Actions**, which updated the `store` -> `selectors` -> `effect()` -> `UI rerenders`.
